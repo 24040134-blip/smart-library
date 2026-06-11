@@ -9,11 +9,33 @@ This Java console program follows the PDF requirements:
 - Keeps BST and Stack internals private for information hiding.
 - Handles invalid menu choices, non-integer ISBNs, duplicate ISBNs, empty titles/authors, missing search results, and borrowing books that are not available.
 
-## Run
+## Project Location
+
+The IntelliJ IDEA project is in:
+
+```text
+SmartLibraryIDEA
+```
+
+Main source file:
+
+```text
+SmartLibraryIDEA/src/Main.java
+```
+
+## Run in IntelliJ IDEA
+
+1. Open the `SmartLibraryIDEA` folder in IntelliJ IDEA.
+2. Open `src/Main.java`.
+3. Choose the run configuration `Run Smart Library`.
+4. Click the green Run button.
+
+## Run from Terminal
 
 ```powershell
-javac Main.java
-java Main
+cd SmartLibraryIDEA
+javac -d out src\Main.java
+java -cp out Main
 ```
 
 ## Menu
