@@ -7,7 +7,8 @@ This Java console program follows the PDF requirements:
 - Uses a Stack to show borrowing history in LIFO order.
 - Uses `LibraryADT` as the public interface for the library system.
 - Keeps BST and Stack internals private for information hiding.
-- Handles invalid menu choices, non-integer ISBNs, duplicate ISBNs, empty titles/authors, missing search results, and borrowing books that are not available.
+- Reads 200 real books from `SmartLibraryIDEA/books.txt`.
+- Handles invalid menu choices, non-integer book numbers, empty titles/authors, missing books, and books that are already borrowed.
 
 ## Project Location
 
@@ -21,6 +22,18 @@ Main source file:
 
 ```text
 SmartLibraryIDEA/src/Main.java
+```
+
+Book data file:
+
+```text
+SmartLibraryIDEA/books.txt
+```
+
+Each book uses this format:
+
+```text
+001|To Kill a Mockingbird|Harper Lee|AVAILABLE
 ```
 
 ## Run in IntelliJ IDEA
@@ -42,10 +55,12 @@ java -cp out Main
 
 ```text
 1. Add Book
-2. Search (BST)
-3. Borrow (Stack)
+2. Search / View Books
+3. Borrow Book
 4. History
 5. Exit
 ```
 
-Borrowing a book removes it from the catalogue and pushes it onto the borrowing history stack.
+- `Search / View Books` reads `books.txt` and displays all books.
+- `Add Book` asks only for title and author, then automatically adds the next book number.
+- `Borrow Book` updates the selected book in `books.txt` from `AVAILABLE` to `BORROWED` and pushes it to the history stack.
